@@ -42,7 +42,7 @@ void get_ip(char *argv ,ip *address)
 {
     sscanf(argv,"%d.%d.%d.%d\n",&address->a,&address->b,&address->c,&address->d);
     printf("%s\n",argv);
-    if(address->a > 255 || address->b > 255 || address->c > 255 || address->d > 255)
+    if(address->a > 255 || address->b > 255 || address->c > 255 || address->d > 255]||address->a < 0 || address->b < 0 || address->c < 0 || address->d < 0 )
     {
         printf("Ce n'est pas un addresse ip\n");
         exit(EXIT_SUCCESS);
@@ -55,22 +55,22 @@ void verifie(ip address)
         printf("L'addresse ip est de class A \n");
     }
 
-    if(address.a >= 128 && address.a < 192)
+    else if(address.a >= 128 && address.a < 192)
     {
         printf("L'addresse ip est de class B \n");
     }
 
-    if(address.a >= 192 && address.a < 224)
+    else if(address.a >= 192 && address.a < 224)
     {
         printf("L'addresse ip est de class C \n");
     }
 
-    if(address.a >= 224 && address.a < 240)
+    else if(address.a >= 224 && address.a < 240)
     {
         printf("L'addresse ip est de class D \n");
     }
 
-    if(address.a >= 240 && address.a < 255)
+    else if(address.a >= 240 && address.a < 255)
     {
         printf("L'addresse ip est de class E \n");
     }
